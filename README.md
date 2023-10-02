@@ -8,9 +8,10 @@ You can read the full story in our blogpost «[Modernizing your geospatial apps 
 
 ## Running this example
 
-You can run this example using
+You can run this example application in your browser using
 
 ```bash
+npm install
 npm run dev
 ```
 
