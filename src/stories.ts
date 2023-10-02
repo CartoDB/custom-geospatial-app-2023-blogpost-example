@@ -6,7 +6,7 @@ const dynamicTilingStory = `
 <p class="overline">✨👀 You're viewing</p>
 <h2>1.4M Points of Interest</h2>
 <p>This visualization is using <a href="https://carto.com/blog/dynamic-tiling-for-highly-performant-cloud-native-maps" rel="noopener noreferrer" target="_blank">Dynamic Tiling</a> to load millions of points of interest across the United States.</p>
-<p>CARTO drastically reduces development and maintenance times for geospatial applications. POIs for the selected category are highlighted in the map using CARTO + deck.gl properties.</p>
+<p>CARTO drastically reduces development and maintenance times for geospatial applications. POIs for the selected category are highlighted on the map using CARTO + deck.gl properties.</p>
 <div class="layer-controls"> 
   <p class="overline">Highlight a category!</p>
   <select name="osmCategorySelector" id="osmCategorySelector">
@@ -30,8 +30,8 @@ const polygonsStory = `
 
 <p class="overline">✨👀 You're viewing</p>
 <h2>Rail accidents by state (via SQL)</h2>
-<p>We can use SQL to query the data directly from our app, including query parameters.</p>
-<p>The increased flexibility makes CARTO a great solution to build geospatial applications</p>
+<p>You can use SQL to query data directly from the app, including query parameters.</p>
+<p>This increased flexibility makes CARTO a great solution to build geospatial applications.</p>
 <div class="code-block">
   <code>SELECT * FROM carto-demo-data.demo_tables.riskanalysis_railroad_accidents WHERE year = @selectedYear</code>
 </div>
@@ -51,8 +51,8 @@ const polygonsStory = `
 const tilesetStory = `
 
 <p class="overline">✨👀 You're viewing</p>
-<h2>481M Building Polygons</h2>
-<p>This visualization is using <a href="https://carto.com/blog/dynamic-tiling-for-highly-performant-cloud-native-maps" rel="noopener noreferrer" target="_blank">pre-generated Tilesets</a> to load 481 million of building footprints (polygons) across the entire world.</p>
+<h2>481M Polygons of Buildings</h2>
+<p>This visualization is using <a href="https://carto.com/blog/dynamic-tiling-for-highly-performant-cloud-native-maps" rel="noopener noreferrer" target="_blank">pre-generated Tilesets</a> to load 481 million building footprints (polygons) across the entire world.</p>
 <p>CARTO unlocks unparalleled scalability and performance in geospatial apps.</p>
 <div class="layer-controls"> 
   <p class="overline">Take me to...</p>
