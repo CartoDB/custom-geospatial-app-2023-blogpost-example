@@ -1,5 +1,6 @@
-import { setupCityButtonsList, setupOsmCategorySelect, setupYearSelect } from "./inputs";
-import { selectStoryMap } from "./map";
+import { selectStoryMap, selectOsmCategory, selectYear, moveToCity } from './map';
+
+// Content for the dynamic tiling story
 
 const dynamicTilingStory = `
 
@@ -26,6 +27,8 @@ const dynamicTilingStory = `
 
 `
 
+// Content for the polygons + SQL story
+
 const polygonsStory = `
 
 <p class="overline">✨👀 You're viewing</p>
@@ -48,11 +51,13 @@ const polygonsStory = `
 
 `
 
+// Content for the tileset story
+
 const tilesetStory = `
 
 <p class="overline">✨👀 You're viewing</p>
 <h2>481M Polygons of Buildings</h2>
-<p>This visualization is using <a href="https://carto.com/blog/dynamic-tiling-for-highly-performant-cloud-native-maps" rel="noopener noreferrer" target="_blank">pre-generated Tilesets</a> to load 481 million building footprints (polygons) across the entire world.</p>
+<p>This visualization is using <a href="https://docs.carto.com/carto-for-developers/guides/visualize-massive-datasets" rel="noopener noreferrer" target="_blank">pre-generated Tilesets</a> to load 481 million building footprints (polygons) across the entire world.</p>
 <p>CARTO unlocks unparalleled scalability and performance in geospatial apps.</p>
 <div class="layer-controls"> 
   <p class="overline">Take me to...</p>
@@ -66,32 +71,38 @@ const tilesetStory = `
 
 `
 
+// and the logic to switch between them
+
 export function selectStory(value: string) {
 
-  const storyCard = document.querySelector<HTMLDivElement>("#story-card");
-  storyCard!.classList.remove("blue-bg","purple-bg","green-bg");
+  const storyCard = document.querySelector<HTMLDivElement>('#story-card');
+  storyCard!.classList.remove('blue-bg','purple-bg','green-bg');
 
-  if (value === "dynamicTiling") {
+  if (value === 'dynamicTiling') {
 
     storyCard!.innerHTML = dynamicTilingStory;
-    storyCard!.classList.add("blue-bg");
-    setupOsmCategorySelect(document.querySelector<HTMLSelectElement>("#osmCategorySelector"));
+    storyCard!.classList.add('blue-bg');
+    const osmCategorySelector = document.querySelector<HTMLSelectElement>('#osmCategorySelector');
+    osmCategorySelector.addEventListener('change', () => selectOsmCategory(String(osmCategorySelector.value)));
 
-  } else if (value === "polygons") {
+  } else if (value === 'polygons') {
 
     storyCard!.innerHTML = polygonsStory;
-    storyCard!.classList.add("purple-bg");
-    setupYearSelect(document.querySelector<HTMLSelectElement>("#yearSelector"));
+    storyCard!.classList.add('purple-bg');
+    const yearSelector = document.querySelector<HTMLSelectElement>('#yearSelector');
+    yearSelector.addEventListener('change', () => selectYear(Number(yearSelector.value)));
 
-
-  } else if (value === "tileset") {
+  } else if (value === 'tileset') {
 
     storyCard!.innerHTML = tilesetStory;
-    storyCard!.classList.add("green-bg");
-    setupCityButtonsList(document.querySelectorAll<HTMLButtonElement[]>(".city-button-group button"));
+    storyCard!.classList.add('green-bg');
+    const cityButtonsList = document.querySelectorAll<HTMLButtonElement[]>('.city-button-group button');
+
+    cityButtonsList.forEach((element) => {
+      element.addEventListener('click', () => moveToCity(String(element.value)));
+    })
     
   }
 
   selectStoryMap(value);
-
 }

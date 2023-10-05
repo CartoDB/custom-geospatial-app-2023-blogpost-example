@@ -1,10 +1,10 @@
-import "./reset.css";
-import "./style.css";
-import "maplibre-gl/dist/maplibre-gl.css";
-import { createMap, render } from "./map";
-import { setupStorySelect } from "./inputs";
-import { selectStory } from "./stories";
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+import './reset.css';
+import './style.css';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import { createMap, render } from './map';
+import { selectStory } from './stories';
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   <div class="context">
 
@@ -39,6 +39,10 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 `;
 createMap();
 render();
-setupStorySelect(document.querySelector<HTMLSelectElement>("#storySelector"));
-selectStory("dynamicTiling");
+
+// setup our main story selector, and load a default story
+const storySelector = document.querySelector<HTMLSelectElement>('#storySelector');
+storySelector.addEventListener('change', () => selectStory(String(storySelector.value)));
+
+selectStory('dynamicTiling');
 
