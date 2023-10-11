@@ -83,20 +83,20 @@ export function selectStory(value: string) {
     storyCard!.innerHTML = dynamicTilingStory;
     storyCard!.classList.add('blue-bg');
     const osmCategorySelector = document.querySelector<HTMLSelectElement>('#osmCategorySelector');
-    osmCategorySelector.addEventListener('change', () => selectOsmCategory(String(osmCategorySelector.value)));
+    osmCategorySelector?.addEventListener('change', () => selectOsmCategory(String(osmCategorySelector.value)));
 
   } else if (value === 'polygons') {
 
     storyCard!.innerHTML = polygonsStory;
     storyCard!.classList.add('purple-bg');
     const yearSelector = document.querySelector<HTMLSelectElement>('#yearSelector');
-    yearSelector.addEventListener('change', () => selectYear(Number(yearSelector.value)));
+    yearSelector?.addEventListener('change', () => selectYear(Number(yearSelector.value)));
 
   } else if (value === 'tileset') {
 
     storyCard!.innerHTML = tilesetStory;
     storyCard!.classList.add('green-bg');
-    const cityButtonsList = document.querySelectorAll<HTMLButtonElement[]>('.city-button-group button');
+    const cityButtonsList = document.querySelectorAll<HTMLButtonElement>('.city-button-group button');
 
     cityButtonsList.forEach((element) => {
       element.addEventListener('click', () => moveToCity(String(element.value)));

@@ -28,7 +28,7 @@ const CITY_STATE_TRANSITIONS = {
   transitionInterpolator: new FlyToInterpolator()
 }
 
-const INITIAL_VIEW_STATE = {
+const INITIAL_VIEW_STATE: Record<string, Object>= {
   dynamicTiling: {
     latitude: 41.8097343,
     longitude: -110.5556199,
@@ -105,11 +105,11 @@ SELECT
 // For the tileset story, move the camera to a 3d view and update it based on the buttons
 
 export function moveToCity(city: string) {
-  const cityLocation: object = getLocation(city);
+  const cityLocation = getLocation(city);
 
   const CITY_VIEW_STATE = {
-    latitude: cityLocation.latitude,
-    longitude: cityLocation.longitude,
+    latitude: cityLocation?.latitude,
+    longitude: cityLocation?.longitude,
     zoom: 13,
     bearing: 10,
     pitch: 45,

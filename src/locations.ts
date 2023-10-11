@@ -1,6 +1,9 @@
-// these locations are used for the "Tileset" story
+interface Location {
+  latitude: number;
+  longitude: number;
+}
 
-const locations = {
+const locations: Record<string, Location> = {
   newyork: {
     latitude: 40.7307343,
     longitude: -74.0056199
@@ -13,8 +16,8 @@ const locations = {
     latitude: 41.3974343,
     longitude: 2.1610199
   }
-}
+};
 
-export function getLocation(city: string) { 
+export function getLocation(city: string): Location | undefined {
   return locations[city];
 }

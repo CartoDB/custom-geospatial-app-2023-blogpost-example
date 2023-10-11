@@ -42,7 +42,7 @@ render();
 
 // setup our main story selector, and load a default story
 const storySelector = document.querySelector<HTMLSelectElement>('#storySelector');
-storySelector.addEventListener('change', () => selectStory(String(storySelector.value)));
+storySelector?.addEventListener('change', () => selectStory(String(storySelector.value)));
 
 selectStory('dynamicTiling');
 
