@@ -11,7 +11,7 @@ You can read the full story in our blogpost «[Modernizing your geospatial apps 
 You can run this example application in your browser using
 
 ```bash
-yarn install
-yarn run dev
+npm install
+npm run dev
 ```
 
