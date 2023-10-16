@@ -3,8 +3,8 @@ name: Firebase Deploy
 
 on:
   push:
-    branches:
-      - master
+    # branches:
+    # - master
 
 env:
   GCP_PROJECT: carto-geospatial-app-blogpost
