@@ -185,16 +185,52 @@ canvas {
 @media screen and (max-width: 800px) {
 
   html {
-    font-size: 90%;
+    font-size: 85%;
   }
 
   .context {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    overflow: auto;
     max-width: 100vw;
-  }
-
-  .story-card {
-    margin-bottom: 92vh;
+    height: 50vh;
+    margin: 0;
+    padding: 1rem;
+    background-color: black;
+    border-bottom: 0.4rem solid white;
   }
 
 }
+
+@media screen and (max-width: 800px) {
+
+  .context {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    overflow: auto;
+    height: 50vh;
+    margin: 0;
+    padding: 1rem;
+    background-color: black;
+    border-bottom: 0.4rem solid white;
+    box-shadow: inset 1rem 1rem 1rem black;
+  }
+
+  .map {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+}
+
+
 
