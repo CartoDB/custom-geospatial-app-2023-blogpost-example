@@ -16,8 +16,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
 
       <div class="intro-content">
-        <p class="caption">Learn more on the <a href="https://carto.com/blog" target="_blank">CARTO blog</a> or <a href="github.com/code" target="_blank">view the code on Github</a>.<p>
-        <p class="intro-text">All data in this map is coming live from queries and tables in our data warehouse: BigQuery, Snowflake, Redshift, PostgreSQL, Databricks...</p>
+        <p class="caption">Learn more on the <a href="https://carto.com/blog/modern-spatial-app-development-carto" target="_blank">CARTO blog</a> or <a href="https://github.com/CartoDB/custom-geospatial-app-2023-blogpost-example" target="_blank">view the code on Github</a>.<p>
+        <p class="intro-text">All data in this map is coming live from queries and tables in our data warehouse. We support BigQuery, Snowflake, Redshift, PostgreSQL, Databricks...</p>
         <p class="overline">Choose a story:</p>
         <select name="storySelector" id="storySelector">
           <option value="dynamicTiling">Visualizing 1.4M points dynamically</option>
