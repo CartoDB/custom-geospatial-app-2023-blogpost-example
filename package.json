@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.5.2"
   },
   "dependencies": {
     "@deck.gl/carto": "^8.9.22",
